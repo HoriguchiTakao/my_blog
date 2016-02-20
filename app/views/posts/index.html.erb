@@ -1,1 +1,27 @@
 <p>一覧</p>
+<div class='row'>
+<div class="col-md-8">
+<ul>
+  <% @posts.each do |post| %>
+  <h1>
+    <%= link_to post.title, post_path(post) %>
+  </h1>
+    <%= post.body %> <br>
+    <%= post.created_at %>
+  <% end %>
+</ul>
+</div>
+<div class="col-md-4">
+<ul>
+  <% @authors.each do |author| %>
+  <%= image_tag author.image_url, class: "img-responsive" %>
+  <h2>
+    <%= author.name %>
+  </h2>
+  <%= author.description %>
+  <hr>
+
+  <% end %>
+</ul>
+</div>
+</div>
