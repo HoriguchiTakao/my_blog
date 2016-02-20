@@ -4,14 +4,17 @@
 <ul>
   <% @posts.each do |post| %>
   <h1>
-    <%= link_to post.title, post_path(post) %>
+    <%= post.title %>
   </h1>
-    <%= post.body %> <br>
+    <%= truncate(post.body, :length => 5) %> <br>
     <%= post.created_at %>
+    <br>
+    <%= link_to "続き", post_path(post), class: "btn btn-default" %>
   <% end %>
 </ul>
 </div>
 <div class="col-md-4">
+<%= link_to '投稿する', new_post_path, class: "btn btn-primary" %>
 <ul>
   <% @authors.each do |author| %>
   <%= image_tag author.image_url, class: "img-responsive" %>
@@ -20,7 +23,22 @@
   </h2>
   <%= author.description %>
   <hr>
-
+  <% end %>
+</ul>
+<% num = 0 %>
+<ul>
+  <% @posts.each do |post| %>
+  <% num += 1 %>
+  <% if num >= 6 %>
+  <% break %>
+  <% end %>
+  <h1>
+    <%= post.title %>
+  </h1>
+    <%= truncate(post.body, :length => 5) %> <br>
+    <%= post.created_at %>
+    <br>
+    <%= link_to "続き", post_path(post), class: "btn btn-default" %>
   <% end %>
 </ul>
 </div>
