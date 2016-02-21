@@ -4,6 +4,8 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :posts
+
   def full_name
     if family_name?
       full_name = family_name + given_name
