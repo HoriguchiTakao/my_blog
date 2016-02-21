@@ -16,12 +16,12 @@
 <div class="col-md-4">
 <%= link_to '投稿する', new_post_path, class: "btn btn-primary" %>
 <ul>
-  <% @authors.each do |author| %>
-  <%= image_tag author.image_url, class: "img-responsive" %>
+  <% @admins.each do |admin| %>
+  <%= image_tag admin.image_url, class: "img-responsive" %>
   <h2>
-    <%= author.name %>
+    <%= admin.full_name %>
   </h2>
-  <%= author.description %>
+  <%= admin.description %>
   <hr>
   <% end %>
 </ul>

@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
+  before_action :authentiate_admin!, only: [:new, :crate, :update, :destroy]
 
   def index
     sorted_posts = Post.all.order(:created_at)
     @posts = sorted_posts.page(params[:page])
-    @authors = Author.all
+    @admins = Admin.all
   end
 
   def show
