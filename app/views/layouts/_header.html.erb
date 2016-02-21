@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav navbar-right">
       <% if  admin_signed_in? %>
         <p class="navbar-text navbar-right">
-        <%= current_admin.full_name %>さんでログイン中
+        <%= link_to '投稿する', new_post_path %>
         </p>
             <li><%= link_to '編集', edit_admin_registration_path %></li>
         <!-- destroy_user_session_path はdeleteメソッドを呼ぶ-->

@@ -1,4 +1,3 @@
-<p>一覧</p>
 <div class='row'>
 <div class="col-md-8">
 <ul>
@@ -14,7 +13,6 @@
 </ul>
 </div>
 <div class="col-md-4">
-<%= link_to '投稿する', new_post_path, class: "btn btn-primary" %>
 <ul>
   <% @admins.each do |admin| %>
   <%= image_tag admin.image_url, class: "img-responsive" %>
