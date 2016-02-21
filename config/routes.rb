@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admins
   resources :posts
-  resources :comments, only: [:create, :destroy]
+  # post '/comments' => 'comments#create'
+ resources :comments, only: [:create, :destroy]
   root 'posts#index'
 
   # get '/posts' => 'posts#index'
