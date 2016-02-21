@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.order(:created_at)
+    sorted_posts = Post.all.order(:created_at)
+    @posts = sorted_posts.page(params[:page])
     @authors = Author.all
   end
 

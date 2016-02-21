@@ -38,8 +38,9 @@
     <%= truncate(post.body, :length => 5) %> <br>
     <%= post.created_at %>
     <br>
-    <%= link_to "続き", post_path(post), class: "btn btn-default" %>
+    <%= link_to "続き", post_path(post.id), class: "btn btn-default" %>
   <% end %>
 </ul>
 </div>
 </div>
+<%= paginate @posts %>
